@@ -53,7 +53,7 @@ Route::group(['prefix' => 'game'], function () {
     Route::get('/{slug}', [GameController::class, 'show'])->middleware(['auth','isVerifiedUser'])->name('game.show');
 });
 Route::group(['prefix' => 'administrator'], function () {
-    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/', [AdminController::class, 'index'])->middleware('can:super-admin')->name('admin.index');
     Route::get('/user/{id}', [AdminUserController::class, 'destroy'])->name('user.delete');
     Route::group(['prefix' => 'game/category'], function () {
         Route::get('create', [AdminGameCategoryController::class, 'create'])->name('game.category.create');

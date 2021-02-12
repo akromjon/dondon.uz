@@ -25,7 +25,7 @@
                             <span><i class="fas fa-chevron-right"></i> </span>
                         </li>
                         <li>
-                            <a href="#">{{ _('lang.game') }}</a>
+                            <a href="#">{{ __('lang.game_category') }}</a>
                         </li>
                     </ul>
                 </div>

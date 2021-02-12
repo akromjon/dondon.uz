@@ -58,11 +58,11 @@
                                     @endif
                                     @else
                                     <a href="{{route('user.show',Auth::user()->phone_number)}}" class="sign-in">
-                                        <i class="fas fa-user"></i> {{__('lang.prifile')}}
+                                        <i class="fas fa-user"></i> {{__('lang.profile')}}
                                     </a>
                                     <a class="sign-in " data-toggle="modal" data-target="#login" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                       <i class="fas fa-sign-out-alt"></i> {{ __('logout') }}
+                                       <i class="fas fa-sign-out-alt"></i> {{ __('lang.logout') }}
                                     </a>
                                     
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -100,17 +100,19 @@
                                     </a>
                                 </li>   
                                 <li class="nav-item">
-                                    <a class="nav-link @if(Route::currentRouteName()=='game.index'){{'active'}}@endif" href="{{route('game.index')}}">{{__('lang.games')}}
+                                    <a class="nav-link @if(Route::currentRouteName()=='game.index'){{'active'}}@endif" href="{{route('game.index')}}">
+                                        {{__('lang.GAMES')}}
                                         <div class="mr-hover-effect"></div>
                                     </a>
                                 </li>                        
                                 <li class="nav-item">
-                                    <a class="nav-link @if(Route::currentRouteName()=='contact'){{'active'}}@endif" href="{{route('contact')}}">{{__('lang.contact')}}
+                                    <a class="nav-link @if(Route::currentRouteName()=='contact'){{'active'}}@endif" href="{{route('contact')}}">
+                                        {{__('lang.contact')}}
                                         <div class="mr-hover-effect"></div>
                                     </a>
                                 </li>                               
                             </ul>
-                            <a href="index.html#" class="mybtn1" data-toggle="modal" data-target="#signin"> {{__('lang.telegram')}}</a>
+                            <a href="#" class="mybtn1" data-toggle="modal" data-target="#signin"> {{__('lang.telegram')}}</a>
                         </div>
                     </nav>
                 </div>

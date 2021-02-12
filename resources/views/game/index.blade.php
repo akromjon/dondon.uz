@@ -25,7 +25,7 @@
                             <span><i class="fas fa-chevron-right"></i> </span>
                         </li>
                         <li>
-                            <a href="#">{{ _('lang.game') }}</a>
+                            <a href="#" style="color: #ff344d">{{ __('lang.GAMES') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -45,7 +45,7 @@
                                             <div class="top-area">
                                                 <div class="left">
                                                     <div class="icon">
-                                                        <img src="assets/images/play/icon1.png" alt="">
+                                                        <img src="{{ asset(str_replace('public', 'storage', $static->game_picture)) }}" alt="">
                                                         <span>
                                                             {{ $static->game_statics_game_play_count }} <i
                                                                 class="fas fa-star"></i>
@@ -53,9 +53,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="right">
-                                                    <h4 class="title">
+                                                    <a href="{{route('game.show',$static->game_slug)}}"><h4 class="title">
                                                         {{ $static->game_name }}
-                                                    </h4>
+                                                    </h4></a>
+                                                    
                                                 </div>
                                             </div>
                                             <div class="bottom-area">

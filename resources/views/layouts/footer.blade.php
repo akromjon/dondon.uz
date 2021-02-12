@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="subscribe-box">
-                        <form action="{{route('contact.subscribe')}}" id="facts_form">
+                        <form method="POST" enctype="multipart/form-data" action="{{route('contact.subscribe')}}" id="facts_form">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-12">
@@ -21,12 +21,12 @@
                                 </div>
                                 <div class="col-lg-3 col-4 d-flex align-self-center">
                                     <div class="icon">
-                                        <img src="assets/images/mail-box.png" alt="">
+                                        <img src="{{asset('assets/images/mail-box.png')}}" alt="">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-8 d-flex align-self-center">
                                     <div class="form-area">
-                                        <input type="tel" required class="phone-mask" id="phone" placeholder="+(998)__-___-____" autocomplete="off">
+                                        <input type="tel" name="phone_number" required class="phone-mask" id="phone" placeholder="+(998)__-___-____" autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 d-flex align-self-center">

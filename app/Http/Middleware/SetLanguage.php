@@ -23,6 +23,9 @@ class SetLanguage
             \App::setLocale($locale);
             return redirect($path)->withCookie(cookie('language'));
         }
+        else{
+            \App::setLocale('uz');
+        }
 
         if ($locale = $request->cookie('language')) {
             \App::setLocale($locale);

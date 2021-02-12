@@ -11,17 +11,16 @@
                     <div class="left-content">
                         <div class="content">
                             <h5 class="subtitle">
-                                New Crypto Game
+                                {{ __('lang.online_games') }}
                             </h5>
                             <h1 class="title">
-                                PLay To WIN
+                                {{ __('lang.play_to_win') }}
                             </h1>
                             <p class="text">
-                                Play, Invest,Exchange and Join the
-                                Contest with high rewards at Dooplo!
+                                {{ __('lang.game_content') }}
                             </p>
                             <div class="links">
-                                <a href="index.html#" class="mybtn1 link1">Get Started Now!</a>
+                                <a href="#games" class="mybtn1 link1">{{ __('lang.start') }}!</a>
                             </div>
                         </div>
                     </div>
@@ -69,37 +68,37 @@
                                             </div>
                                             <div class="content">
                                                 <h4 class="title">
-                                                    Exclusive Offer
+                                                    {{ __('lang.more20games') }}
                                                 </h4>
-                                                <a href="index.html#" class="link">read more <i
-                                                        class="fas fa-arrow-right"></i></a>
+                                                <a href="{{ route('game.index') }}" class="link">{{ __('lang.start') }}
+                                                    <i class="fas fa-arrow-right"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6">
                                         <div class="single-feature">
                                             <div class="icon two">
-                                                <img src="assets/images/feature/icon2.png" alt="">
+                                                <img src="{{ asset('assets/images/feature/icon2.png') }}" alt="">
                                             </div>
                                             <div class="content">
                                                 <h4 class="title">
-                                                    Provably Fair
+                                                    {{ __('lang.difgames') }}
                                                 </h4>
-                                                <a href="index.html#" class="link">read more <i
-                                                        class="fas fa-arrow-right"></i></a>
+                                                <a href="{{ route('game.index') }}" class="link">{{ __('lang.start') }}
+                                                    <i class="fas fa-arrow-right"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6">
                                         <div class="single-feature">
                                             <div class="icon three">
-                                                <img src="assets/images/feature/icon3.png" alt="">
+                                                <img src="{{ asset('assets/images/feature/icon3.png') }}" alt="">
                                             </div>
                                             <div class="content">
                                                 <h4 class="title">
-                                                    24/7 Support
+                                                    24/7 {{ __('lang.support') }}
                                                 </h4>
-                                                <a href="index.html#" class="link">read more <i
+                                                <a href="{{ route('contact') }}" class="link">{{ __('lang.approach') }} <i
                                                         class="fas fa-arrow-right"></i></a>
                                             </div>
                                         </div>
@@ -117,7 +116,7 @@
                 <div class="col-lg-8 col-md-10">
                     <div class="section-heading">
                         <h2 class="title">
-                            {{ __('lang.games') }}
+                            {{ __('lang.top_games') }}
                         </h2>
                     </div>
                 </div>
@@ -125,7 +124,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="game-slider">
-                        @foreach ($games as $game)
+                        @foreach ($games->take(20) as $game)
                             <div class="item">
                                 <div class="single-game">
                                     <img src="{{ asset(str_replace('public', 'storage', $game->picture)) }}" alt="">
@@ -139,93 +138,33 @@
             </div>
         </div>
     </section>
-    <section class="bonus-area">
+    <section class="bonus-area" id="games">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
                     <div class="section-heading">
-                        <h5 class="subtitle">
-                            Try to check out our
-                        </h5>
                         <h2 class="title">
-                            Dooplo Bonuses
+                            {{ __('lang.game_collection') }}
                         </h2>
-                        <p class="text">
-                            We update our site regularly; more and more winners are added every day! To locate the most
-                            recent winner's information
-                        </p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-bonus">
-                        <div class="content">
-                            <img src="assets/images/bonus/ic1.png" alt="">
-                            <h4 class="title">
-                                Lucky Bet bonus
-                            </h4>
+                @foreach ($games as $game)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-bonus">
+                            <div class="content">
+                                <img src="{{ asset(str_replace('public', 'storage', $game->picture)) }}" alt="">
+                                <h4 class="title">
+                                    {{$game->name}}
+                                </h4>
+                            </div>
+                            <a href="{{route('game.show',$game->slug)}}" class="mybtn2">{{__('lang.play')}}</a>
                         </div>
-                        <a href="bonus.html#" class="mybtn2">PLay NoW !</a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-bonus">
-                        <div class="content">
-                            <img src="assets/images/bonus/ic2.png" alt="">
-                            <h4 class="title">
-                                Progressive jackpot
-                            </h4>
-                        </div>
-                        <a href="bonus.html#" class="mybtn2">PLay NoW !</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-bonus">
-                        <div class="content">
-                            <img src="assets/images/bonus/ic3.png" alt="">
-                            <h4 class="title">
-                                Affiliate program
-                            </h4>
-                        </div>
-                        <a href="bonus.html#" class="mybtn2">PLay NoW !</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-bonus">
-                        <div class="content">
-                            <img src="assets/images/bonus/ic4.png" alt="">
-                            <h4 class="title">
-                                Bitcoin Faucet
-                            </h4>
-                        </div>
-                        <a href="bonus.html#" class="mybtn2">PLay NoW !</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-bonus">
-                        <div class="content">
-                            <img src="assets/images/bonus/ic5.png" alt="">
-                            <h4 class="title">
-                                GOLDEN STAR
-                            </h4>
-                        </div>
-                        <a href="bonus.html#" class="mybtn2">PLay NoW !</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-bonus">
-                        <div class="content">
-                            <img src="assets/images/bonus/ic6.png" alt="">
-                            <h4 class="title">
-                                Challenger
-                            </h4>
-                        </div>
-                        <a href="bonus.html#" class="mybtn2">PLay NoW !</a>
-                    </div>
-                </div>
+                @endforeach               
             </div>
+            {{$games->links()}}
         </div>
     </section>
 @endsection
-

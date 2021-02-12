@@ -33,8 +33,7 @@ class HomeController extends Controller
             ->select('games.*')
             ->orderBy('id', 'DESC')
             ->where('is_published', true)
-            ->limit(15)
-            ->get();
+            ->paginate(30);           
         $users = User::query()
             ->select('users.name as name', 'users.phone_number as phone_number', 'users.created_at as created_at')
             ->orderBy('id', 'DESC')
