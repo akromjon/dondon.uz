@@ -23,7 +23,7 @@
                                 </li>
                                 <li>
                                     <p>
-                                        <i class="fas fa-envelope"></i> <a href="email: info@Dooplo.com">info@Dooplo.com</a>
+                                        <i class="fas fa-envelope"></i> <a href="email: info@dondon.uz">info@dondon.uz</a>
                                     </p>
                                 </li>
                                 <li>
