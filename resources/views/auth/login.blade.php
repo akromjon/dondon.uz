@@ -31,6 +31,11 @@
 
                                 <input type="tel" name="phone_number" required class="input-field" id="phone"
                                     placeholder="+(998)__-___-____" autocomplete="off">
+                                    @error('phone_number')
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                                 @if (session('status'))
                                     <div class="alert alert-success" role="success">
                                         {{ session('status') }}

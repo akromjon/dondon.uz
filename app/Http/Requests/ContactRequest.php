@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GameCategoryRequest extends FormRequest
+class ContactRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,9 @@ class GameCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|min:3|max:255|string',
-            'picture'=>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'description'=>'max:300',
-            'is_published'=>'required'
+            'name'=>'required|max:100|min:5|string',
+            'phone_number'=>'required|max:25',
+            'message'=>'required|max:300'
         ];
     }
 }

@@ -9,6 +9,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\GameCategoryController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\Admin\GameController as AdminGameController;
+use App\Http\Controllers\GameController;
+
+
 
 
 /*
@@ -41,21 +45,28 @@ Route::group(['prefix' => 'user'], function () {
 Route::post('/subscribe', [ContactController::class, 'subscribe'])->name('contact.subscribe');
 
 Route::group(['prefix' => 'game/categories'], function () {
-    Route::get('/index', [GameCategoryController::class, 'index'])->name('game.categories.index');
+    Route::get('/', [GameCategoryController::class, 'index'])->name('game.categories.index');
     Route::get('/{GameCategorySlug}', [GameCategoryController::class, 'show'])->name('game.categories.show');
 });
-
-
-
+Route::group(['prefix' => 'game'], function () {
+    Route::get('/', [GameController::class, 'index'])->name('game.index');
+    Route::get('/{slug}', [GameController::class, 'show'])->middleware(['auth','isVerifiedUser'])->name('game.show');
+});
 Route::group(['prefix' => 'administrator'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/user/{id}', [AdminUserController::class, 'destroy'])->name('user.delete');
-
     Route::group(['prefix' => 'game/category'], function () {
         Route::get('create', [AdminGameCategoryController::class, 'create'])->name('game.category.create');
         Route::post('create', [AdminGameCategoryController::class, 'store'])->name('game.category.store');
         Route::get('{slug}', [AdminGameCategoryController::class, 'edit'])->name('game.category.edit');
         Route::put('{slug}', [AdminGameCategoryController::class, 'update'])->name('game.category.update');
         Route::delete('{slug}', [AdminGameCategoryController::class, 'destroy'])->name('game.category.destroy');
+    });
+    Route::group(['prefix' => 'game'], function () {
+        Route::get('create', [AdminGameController::class, 'create'])->name('game.create');
+        Route::post('create', [AdminGameController::class, 'store'])->name('game.store');
+        Route::get('{slug}', [AdminGameController::class, 'edit'])->name('game.edit');
+        Route::put('{slug}', [AdminGameController::class, 'update'])->name('game.update');
+        Route::delete('{slug}', [AdminGameController::class, 'destroy'])->name('game.destroy');
     });
 });

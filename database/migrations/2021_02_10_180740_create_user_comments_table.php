@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGameCategoriesTable extends Migration
+class CreateUserCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateGameCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('game_categories', function (Blueprint $table) {
+        Schema::create('user_comments', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('picture')->nullable();
-            $table->string('description')->nullable();
-            $table->string('slug')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('comment')->nullable();
             $table->boolean('is_published')->nullable();
             $table->timestamps();
         });
@@ -31,6 +29,6 @@ class CreateGameCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('game_categories');
+        Schema::dropIfExists('user_comments');
     }
 }

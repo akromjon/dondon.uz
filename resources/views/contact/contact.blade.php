@@ -54,6 +54,11 @@
                             <h4 class="title">
                                 {{ __('lang.send_message') }}
                             </h4>
+                            @if (session('success'))
+                                <div class="alert alert-success" role="success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
                             <form method="POST" enctype="multipart/form-data" action="{{ route('contact.store') }}">
                                 @csrf
                                 <input type="text" name="name" class="input-field" placeholder="{{ __('lang.name') }}"
@@ -70,18 +75,19 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                                <textarea class="input-field textarea" name="message" placeholder="{{ __('lang.message') }}"></textarea required>
-                                @error('message')
-                                    <div class="alert alert-danger" role="alert">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                                <button type="submit" class="mybtn1">{{ __('lang.submit') }}</button>
-                            </form>
+                                <textarea class="input-field textarea" name="message"
+                                    placeholder="{{ __('lang.message') }}"></textarea required>
+                                    @error('message')
+                                            <div class="alert alert-danger" role="alert">
+                                                {{ $message }}
+                                            </div>
+                                    @enderror
+                                    <button type="submit" class="mybtn1">{{ __('lang.submit') }}</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 @endsection

@@ -2,10 +2,14 @@
 
 namespace App\Providers;
 
+use App\Models\GameCategory;
+use App\Observers\GameCategoryObserver;
+use App\Observers\GameObserver;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\User;
 use App\Observers\UserObserver;
+use App\Models\Game;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -34,5 +38,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('languages', array_map('basename', $languages));
         });
         User::observe(UserObserver::class);
+        GameCategory::observe(GameCategoryObserver::class);
+        Game::observe(GameObserver::class);
     }
 }

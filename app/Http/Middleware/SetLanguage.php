@@ -18,7 +18,7 @@ class SetLanguage
         if ($request->has('language')) {
             $path   = $request->path();
             $locale = $request->get('language');
-            setcookie('language', $locale, time() + 86400 * 30);
+            setcookie('language', $locale, time() + 86400 * 900);
             # set locale           
             \App::setLocale($locale);
             return redirect($path)->withCookie(cookie('language'));

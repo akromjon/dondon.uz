@@ -45,106 +45,7 @@
                             </ul>
                         </div>
                         <div class="right-content">
-                            <ul class="right-list">
-                                {{-- <li>
-                                    <div class="cart-icon tm-dropdown">
-                                        <i class="fas fa-cart-arrow-down"></i>
-                                        <span class="cart-count">10</span>
-                                        <div class="tm-dropdown-menu">
-                                            <ul class="list">
-                                                <li class="list-item">
-                                                    <div class="close">
-                                                        <i class="fas fa-times"></i>
-                                                    </div>
-                                                    <ul class="number-list">
-                                                        <li>24</li>
-                                                        <li>25</li>
-                                                        <li>26</li>
-                                                        <li>27</li>
-                                                        <li>28</li>
-                                                    </ul>
-                                                </li>
-                                                <li class="list-item">
-                                                    <div class="close">
-                                                        <i class="fas fa-times"></i>
-                                                    </div>
-                                                    <ul class="number-list">
-                                                        <li>24</li>
-                                                        <li>25</li>
-                                                        <li>26</li>
-                                                        <li>27</li>
-                                                        <li>28</li>
-                                                    </ul>
-                                                </li>
-                                                <li class="list-item">
-                                                    <div class="close">
-                                                        <i class="fas fa-times"></i>
-                                                    </div>
-                                                    <ul class="number-list">
-                                                        <li>24</li>
-                                                        <li>25</li>
-                                                        <li>26</li>
-                                                        <li>27</li>
-                                                        <li>28</li>
-                                                    </ul>
-                                                </li>
-                                                <li class="list-item">
-                                                    <div class="close">
-                                                        <i class="fas fa-times"></i>
-                                                    </div>
-                                                    <ul class="number-list">
-                                                        <li>24</li>
-                                                        <li>25</li>
-                                                        <li>26</li>
-                                                        <li>27</li>
-                                                        <li>28</li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <a href="cart.html" class="link-btn">Cart Page</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="notofication tm-dropdown">
-                                        <i class="fas fa-bell"></i>
-                                        <span class="count">11</span>
-                                        <div class="tm-dropdown-menu">
-                                            <ul class="list">
-                                                <li>
-                                                    <a href="index.html#">
-                                                        <i class="fas fa-bell"></i>
-                                                        Invest Exchange
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index.html#">
-                                                        <i class="fas fa-bell"></i>
-                                                        Invest Exchange
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index.html#">
-                                                        <i class="fas fa-bell"></i>
-                                                        Invest Exchange
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index.html#">
-                                                        <i class="fas fa-bell"></i>
-                                                        Invest Exchange
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index.html#">
-                                                        <i class="fas fa-bell"></i>
-                                                        Invest Exchange
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li> --}}
+                            <ul class="right-list">                                
                                 <li>
                                     @guest
                                     <a href="{{route('login')}}" class="sign-in">
@@ -183,8 +84,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="{{route('home')}}">
-                            <img src="assets/images/logo.png" alt="">
+                        <a class="navbar-brand " style="color: white; font-size:25px;" href="{{route('home')}}">
+                            <span style="color:#ff344d;">D</span>on<span style="color:#ff344d;">D</span>on.uz
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu"
                             aria-controls="main_menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -197,12 +98,17 @@
                                         {{__('lang.home')}}
                                         <div class="mr-hover-effect"></div>
                                     </a>
-                                </li>                           
+                                </li>   
+                                <li class="nav-item">
+                                    <a class="nav-link @if(Route::currentRouteName()=='game.index'){{'active'}}@endif" href="{{route('game.index')}}">{{__('lang.games')}}
+                                        <div class="mr-hover-effect"></div>
+                                    </a>
+                                </li>                        
                                 <li class="nav-item">
                                     <a class="nav-link @if(Route::currentRouteName()=='contact'){{'active'}}@endif" href="{{route('contact')}}">{{__('lang.contact')}}
                                         <div class="mr-hover-effect"></div>
                                     </a>
-                                </li>
+                                </li>                               
                             </ul>
                             <a href="index.html#" class="mybtn1" data-toggle="modal" data-target="#signin"> {{__('lang.telegram')}}</a>
                         </div>

@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateGamesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+  
     public function up()
     {
         Schema::create('games', function (Blueprint $table) {
@@ -18,19 +14,16 @@ class CreateGamesTable extends Migration
             $table->unsignedBigInteger('game_categories_id')->nullable();
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
-            $table->longText('scripts_header')->nullable();
-            $table->longText('html_tags')->nullable();
-            $table->longText('scripts_footer')->nullable();
+            $table->longText('url')->nullable();
+            $table->string('height')->nullable();
+            $table->string('width')->nullable();            
             $table->unsignedBigInteger('user_id')->nullable();
+            $table->boolean('is_published')->default();
+            $table->string('picture')->nullable();
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('games');

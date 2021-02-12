@@ -43,6 +43,7 @@ class GameCategoryController extends Controller
             'picture' => $request->hasFile('picture') ? $request->file('picture')->storeAs('public/game/categories',Str::random(20).'.'.$request->file('picture')->getClientOriginalExtension()) : null,
             'description' => $request->description,
             'slug' => Str::slug($request->name, '-') . \Carbon\Carbon::now()->format('d-m-Y'),
+            'is_published'=>boolval($request->is_published)
         ]);
         return redirect()->route('admin.index');
     }
@@ -83,8 +84,13 @@ class GameCategoryController extends Controller
         $gameCategory = $this->getGameCategoryBySlug($slug);
         $gameCategory->update([
             'name' => $request->name,
-            'picture' => $request->file('avatar')->storeAs('avatars', $request->user()->id),
+            'picture' => $request->hasFile('picture') ? $request->file('picture')->storeAs('public/game/categories',Str::random(20).'.'.$request->file('picture')->getClientOriginalExtension()) : $gameCategory->picture,
+            'description' => $request->description,
+            'slug' => Str::slug($request->name, '-') . \Carbon\Carbon::now()->format('d-m-Y'),
+            'is_published'=>boolval($request->is_published) 
         ]);
+       
+        return redirect()->route('admin.index');
     }
 
     /**
