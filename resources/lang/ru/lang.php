@@ -24,7 +24,7 @@ return [
     'password_success'=>'Пароль успешно изменен',
     'online_games'=>'Онлайн игры',
     'play_to_win'=>'Наслаждаться',
-    'game_content'=>'Пакет бесплатных игр',
+    'game_content'=>'Пакет игр',
     'start'=>'Начать',
     'more20games'=>'Набор из более чем 20 игр',
     'difgames'=>'Игры на самые разные темы',
@@ -55,4 +55,6 @@ return [
     'reset_password'=>'Сброс пароля',
     'reset'=>'Изменять',
     'password_update'=>'Изменить пароль',
+    'verify_code'=>'проверить смс код',
+    'verify'=>'Проверять'
 ];

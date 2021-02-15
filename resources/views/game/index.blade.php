@@ -1,13 +1,13 @@
 @extends('layouts.master')
 @section('title')
     <title>{{ __('lang.all_games') }}</title>
-    <meta property="og:title" content="{{ __('lang.title') }}" />
-    <meta property="og:description" content="{{ __('lang.description') }}." />
-    <meta property="og:image" content="{{ 'img' }}" />
+    <meta property="og:title" content="{{ __('lang.all_games') }}" />
+    <meta property="og:description" content="{{ __('lang.title') }}." />
+    <meta property="og:image" content="{{ asset('assets/images/h-shapes/phone.png') }}" />
 @endsection
 @section('content')
     <section class="breadcrumb-area play">
-        <img class="bc-img" src="assets/images/breadcrumb/play.png" alt="">
+        <img class="bc-img" src="{{asset('assets/images/breadcrumb/play.png')}}" alt="">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

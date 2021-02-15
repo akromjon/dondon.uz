@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'=>'Onlayn O\'yinlar | :name',
+    'title'=>'Onlayn O\'yinlar',
     'home' => 'Bosh Saxifa',
     'contact' => 'Aloqa',
     'sign_in'=>'Kirish',
@@ -24,7 +24,7 @@ return [
     'password_success'=>'Parol Muofaqiyatli Almashtirildi',
     'online_games'=>'Onlayn O\'yinlar',
     'play_to_win'=>'Zavqlan',
-    'game_content'=>'Bepul O\'yinlar to\'plami',
+    'game_content'=>'Qiziqarli O\'yinlar to\'plami',
     'start'=>'Boshlash',
     'more20games'=>'20 DAN ORTIQ O\'YINLAR TO\'PLAMI',
     'difgames'=>'Turli Mavzudagi O\'yinlar',
@@ -54,5 +54,7 @@ return [
     'visibility'=>'Ko\'rsatish',
     'reset_password'=>'Parolni O\'zgartirish',
     'reset'=>'O\'zgartirish',
-    'password_update'=>'Parolni O\'zgartirish'
+    'password_update'=>'Parolni O\'zgartirish',
+    'verify_code'=>'SMS kod yuborildi',
+    'verify'=>'Tasdiqlash'
 ];

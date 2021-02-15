@@ -11,6 +11,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">{{ __('lang.phone') }}</th>
+                                    <th scope="col">{{ __('lang.name') }}</th>
                                     <th scope="col">{{ __('lang.role') }}</th>
                                     <th scope="col">{{ __('lang.status') }}</th>
                                     <th scope="col">{{ __('lang.status_current') }}</th>
@@ -20,8 +21,9 @@
                             <tbody>
                                 @foreach ($users as $key => $user)
                                     <tr>
-                                        <th scope="row">{{ $key }}</th>
+                                        <th scope="row">{{ $key+1 }}</th>
                                         <td>{{ $user->phone_number }}</td>
+                                        <td>{{ $user->name }}</td>
                                         <td>
                                             @foreach ($user->roles as $role)
                                                 {{ $role->name }}
@@ -63,7 +65,7 @@
                             <tbody>
                                 @foreach ($gameCategories as $key => $gameCategory)
                                     <tr>
-                                        <th scope="row">{{ $key }}</th>
+                                        <th scope="row">{{ $key+1 }}</th>
                                         <td>{{ $gameCategory->name }}</td>
                                         <td><img width="80"
                                                 src="{{ asset(str_replace('public', 'storage', $gameCategory->picture)) }}">
@@ -111,7 +113,7 @@
                             <tbody>
                                 @foreach ($games as $key => $game)
                                     <tr>
-                                        <th scope="row">{{ $key }}</th>
+                                        <th scope="row">{{ $key+1 }}</th>
                                         <td>{{ $game->name }}</td>
                                         <td><img width="80"
                                                 src="{{ asset(str_replace('public', 'storage', $game->picture)) }}"></td>
@@ -132,7 +134,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $gameCategories->links() }}
+                        {{ $games->links() }}
                     </div>
                 </div>
             </div>

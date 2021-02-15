@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function index()
     {
         $users = User::query()
-            ->select('users.phone_number as phone_number', 'users.status as status', 'users.old_status as old_status', 'users.id as id')
+            ->select('users.phone_number as phone_number', 'users.status as status', 'users.old_status as old_status', 'users.id as id','users.name as name')
             ->orderBy('id', 'DESC')
             ->paginate(30)
             ->fragment('users');

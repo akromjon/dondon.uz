@@ -6,6 +6,7 @@ use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 class UsersTableSeeder extends Seeder
+
 {
     /**
      * Run the database seeds.

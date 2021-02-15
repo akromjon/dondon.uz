@@ -41,15 +41,15 @@
     <section class="play-games">
         <div class="all-games" style="padding: 0">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-tab1" role="tabpanel"
                                 aria-labelledby="pills-tab1-tab">
-                                <div  class="embed-responsive embed-responsive-1by1" id="panel-fullscreen" >
-                                    <iframe class="embed-responsive-item" src="{{$game->url}}"></iframe>
-                                </div>                              
-
+                                <div class="embed-responsive embed-responsive-1by1" id="panel-fullscreen">
+                                    <iframe class="embed-responsive-item" frameborder="0"
+                                         src="{{ $game->url }}"></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -57,5 +57,5 @@
             </div>
         </div>
     </section>
-    
+
 @endsection

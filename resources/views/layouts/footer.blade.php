@@ -1,53 +1,42 @@
 <!-- Footer Area Start -->
-@if(Route::currentRouteName()!='login' && Route::currentRouteName()!='register')
-<footer class="footer" id="footer">
-    <div class="subscribe-area">
+
+<footer class="footer" id="footer"> 
+    <div class="copy-bg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="subscribe-box">
-                        <form method="POST" enctype="multipart/form-data" action="{{route('contact.subscribe')}}" id="facts_form">
-                            @csrf
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="heading-area">
-                                        <h5 class="sub-title">
-                                            {{__('lang.facts_use')}}
-                                        </h5>
-                                        <h4 class="title">
-                                            {{__('lang.subscribe')}}
-                                        </h4>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-4 d-flex align-self-center">
-                                    <div class="icon">
-                                        <img src="{{asset('assets/images/mail-box.png')}}" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-8 d-flex align-self-center">
-                                    <div class="form-area">
-                                        <input type="tel" name="phone_number" required class="phone-mask" id="phone" placeholder="+(998)__-___-____" autocomplete="off">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 d-flex align-self-center">
-                                    <div class="button-area">
-                                        <button class="mybtn1" type="submit">{{__('lang.subscribe')}}
-                                            <span><i class="fas fa-paper-plane"></i></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                <div class="col-lg-5">
+                    <div class="left-area">
+                        <p>Copyright © 2021
+                        </p>
                     </div>
+                </div>
+                <div class="col-lg-7">
+                    <ul class="copright-area-links">
+                        <li class="nav-item">
+                            <a class="nav-link @if(Route::currentRouteName()=='home'){{'active'}}@endif" href="{{route('home')}}">
+                                {{__('lang.home')}}
+                                <div class="mr-hover-effect"></div>
+                            </a>
+                        </li>   
+                        <li class="nav-item">
+                            <a class="nav-link @if(Route::currentRouteName()=='game.index'){{'active'}}@endif" href="{{route('game.index')}}">
+                                {{__('lang.GAMES')}}
+                                <div class="mr-hover-effect"></div>
+                            </a>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link @if(Route::currentRouteName()=='contact'){{'active'}}@endif" href="{{route('contact')}}">
+                                {{__('lang.contact')}}
+                                <div class="mr-hover-effect"></div>
+                            </a>
+                        </li> 
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-   
-    
-    
-</footer>
-@endif
+</footer> 
+
 <!-- Footer Area End -->
 
 <!-- Back to Top Start -->

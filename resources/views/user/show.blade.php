@@ -1,20 +1,13 @@
 @extends('layouts.master')
-
+@section('title')
+    <title>{{ __('lang.profile') }}</title>
+    <meta property="og:title" content="{{ __('lang.all_games') }}" />
+    <meta property="og:description" content="{{ __('lang.title') }}." />
+    <meta property="og:image" content="{{ asset('assets/images/h-shapes/phone.png') }}" />
+@endsection
 @section('content')
     <section class="contact">
-        <div class="container-fluid pt-5">
-            {{-- <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-10">
-                    <div class="section-heading">
-                        <h5 class="subtitle">
-                            Aloqa Qilish
-                        </h5>
-                        <h2 class="title">
-                            Xabar Qoldirish
-                        </h2>
-                    </div>
-                </div>
-            </div> --}}
+        <div class="container-fluid pt-5">           
             <div class="row justify-content-center mt-5">
                 <div class="col-lg-6 col-md-6">
                     <div class="contact-form-wrapper">

@@ -1,5 +1,10 @@
 @extends('layouts.master')
-
+@section('title')
+    <title>{{ __('lang.sign_in') }}</title>
+    <meta property="og:title" content="{{ __('lang.all_games') }}" />
+    <meta property="og:description" content="{{ __('lang.title') }}." />
+    <meta property="og:image" content="{{ asset('assets/images/h-shapes/phone.png') }}" />
+@endsection
 @section('content')
     <section class="contact">
         <div class="container-fluid pt-5">

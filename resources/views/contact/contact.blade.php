@@ -1,6 +1,9 @@
 @extends('layouts.master')
 @section('title')
     <title>{{ __('lang.contact') }}</title>
+    <meta property="og:title" content="{{ __('lang.all_games') }}" />
+    <meta property="og:description" content="{{ __('lang.title') }}." />
+    <meta property="og:image" content="{{ asset('assets/images/h-shapes/phone.png') }}" />
 @endsection
 @section('content')
     <section class="breadcrumb-area bc-contact">

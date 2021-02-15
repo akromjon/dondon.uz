@@ -1,5 +1,10 @@
 @extends('layouts.app')
-
+@section('title')
+    <title>{{ __('lang.reset_password') }}</title>
+    <meta property="og:title" content="{{ __('lang.all_games') }}" />
+    <meta property="og:description" content="{{ __('lang.title') }}." />
+    <meta property="og:image" content="{{ asset('assets/images/h-shapes/phone.png') }}" />
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

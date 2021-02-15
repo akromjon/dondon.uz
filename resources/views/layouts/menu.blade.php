@@ -18,12 +18,12 @@
                             <ul class="left-list">
                                 <li>
                                     <p>
-                                        <i class="fas fa-headset"></i> <a href="tel:998990005303">+998 99 000 53 03</a>
+                                        <i class="fas fa-headset"></i> <a href="tel:+998981211228">+99898 121 12 28</a>
                                     </p>
                                 </li>
                                 <li>
                                     <p>
-                                        <i class="fas fa-envelope"></i> <a href="email: info@dondon.uz">info@dondon.uz</a>
+                                        <i class="fas fa-envelope"></i> <a href="email: info@levelup.uz">info@levelup.uz</a>
                                     </p>
                                 </li>
                                 <li>
@@ -112,7 +112,7 @@
                                     </a>
                                 </li>                               
                             </ul>
-                            <a href="#" class="mybtn1" data-toggle="modal" data-target="#signin"> {{__('lang.telegram')}}</a>
+                            {{-- <a href="#" class="mybtn1" data-toggle="modal" data-target="#signin"> {{__('lang.telegram')}}</a> --}}
                         </div>
                     </nav>
                 </div>

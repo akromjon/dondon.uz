@@ -1,20 +1,13 @@
 @extends('layouts.master')
-
+@section('title')
+    <title>{{ __('lang.sign_in') }}</title>
+    <meta property="og:title" content="{{ __('lang.all_games') }}" />
+    <meta property="og:description" content="{{ __('lang.title') }}." />
+    <meta property="og:image" content="{{ asset('assets/images/h-shapes/phone.png') }}" />
+@endsection
 @section('content')
     <section class="contact">
-        <div class="container-fluid pt-5">
-            {{-- <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-10">
-                    <div class="section-heading">
-                        <h5 class="subtitle">
-                            Aloqa Qilish
-                        </h5>
-                        <h2 class="title">
-                            Xabar Qoldirish
-                        </h2>
-                    </div>
-                </div>
-            </div> --}}
+        <div class="container-fluid pt-5">           
             <div class="row justify-content-center mt-5">
                 <div class="col-lg-6 col-md-6">
                     <div class="contact-form-wrapper">
@@ -25,13 +18,10 @@
                             <form method="POST" enctype="multipart/form-data" action="{{ route('login') }}"
                                 autocomplete="off">
                                 @csrf
-
                                 <input autocomplete="false" name="hidden" type="text" style="display:none;">
-
-
                                 <input type="tel" name="phone_number" required class="input-field" id="phone"
                                     placeholder="+(998)__-___-____" autocomplete="off">
-                                    @error('phone_number')
+                                @error('phone_number')
                                     <div class="alert alert-danger" role="alert">
                                         {{ $message }}
                                     </div>
@@ -47,14 +37,17 @@
                                 <a class="btn btn-link" style="margin-left: -10px;"
                                     href="{{ route('password.request') }}">
                                     {{ __('lang.forgot_password') }}
-                                </a><br><br>
-
+                                </a><br>
+                                <a  class="btn btn-link" style="margin-left: -10px; margin-top:-20px;"
+                                    href="{{route('register')}}"><br>
+                                    {{ __('lang.sign_up') }}
+                                </a><br>
                                 @error('password')
                                     <div class="alert alert-danger" role="alert">
                                         {{ $message }}
                                     </div>
                                 @enderror
-                                <button type="submit" class="mybtn1">{{ __('lang.sign_in') }}</button>
+                                <button type="submit" class="mybtn1">{{ __('lang.sign_in') }}</button>                                
                             </form>
                         </div>
                     </div>
