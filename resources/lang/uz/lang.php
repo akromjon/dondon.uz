@@ -56,5 +56,6 @@ return [
     'reset'=>'O\'zgartirish',
     'password_update'=>'Parolni O\'zgartirish',
     'verify_code'=>'SMS kod yuborildi',
-    'verify'=>'Tasdiqlash'
+    'verify'=>'Tasdiqlash',
+    'update_profile'=>'Profilni Tahrirlash'
 ];

@@ -20,21 +20,19 @@
                                     {{ session('status') }}
                                 </div>
                             @endif
-                            <form method="POST" enctype="multipart/form-data" action="{{ route('user.update') }}"
-                                autocomplete="off">
-                                @csrf
+                            <form enctype="multipart/form-data" 
+                                autocomplete="off">                                
                                 <input type="hidden" name="user_id" value="{{ $user->id }}">
-                                <input type="text" name="name" value="{{ $user->name }}" required class="input-field"
+                                <input type="text" name="name" value="{{ $user->name }}" disabled required class="input-field"
                                     placeholder="{{ __('lang.name') }}">
-                                <input type="tel" name="phone_number"  class="input-field" id="phone"
+                                <input disabled type="tel" name="phone_number"  class="input-field" id="phone"
                                     placeholder="+(998){{ substr($user->phone_number, 3) }}" autocomplete="off"
                                     value="{{ substr($user->phone_number, 3) }}">
                                 @error('phone_number')
                                     <div class="alert alert-danger" role="alert">
                                         {{ $message }}
                                     </div>
-                                @enderror
-                                <button type="submit" class="mybtn1">{{ __('lang.update_profile') }}</button>
+                                @enderror                                
                             </form>
                         </div>
                     </div>

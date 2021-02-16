@@ -23,14 +23,14 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Akrom Numonov',
                 'phone_number' => '998990005303',
-                'password' => Hash::make('super-admin-akromjon')
+                'password' => Hash::make('admingamerrr')
             ]
         );
         $admin = User::create(
             [
                 'name' => 'Admin User',
                 'phone_number' => '998901001010',
-                'password' => Hash::make('game_admin_!!!')
+                'password' => Hash::make('admin-gamerrr')
             ]
         );                
         $superAdmin->roles()->attach($superAdminRole);

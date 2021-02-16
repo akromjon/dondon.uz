@@ -52,8 +52,11 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         $data['phone_number'] = intval(str_replace(['+', ' ', '(', ')', '-'], '', $data['phone_number']));
+        $this->checkUserExists($data['phone_number']);
         $this->validatedData = $data;
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'min:3', 'max:20'],
             'phone_number' => ['required', 'digits_between:12,12', 'unique:users'],
@@ -76,5 +79,15 @@ class RegisterController extends Controller
             'phone_number' => $data['phone_number'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    private function checkUserExists($phoneNumber)
+    {
+        $user = User::where('phone_number', $phoneNumber)->first();
+        if ($user) {
+            if ($user->phone_number_verified_at == null) {
+                $user->delete();
+            }
+        }
     }
 }
